@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <title>Daar Al Furqon Kudus — Pondok Pesantren </title>
+ <meta name="description" content="Pondok Pesantren Daar Al Furqon Kudus — Mencetak Generasi Qur'ani Sejak 1984">
+ <meta name="theme-color" content="#0f1f14">
+ <!-- Favicon -->
+ <link rel="icon" type="image/png" href="logo.png">
+ <link rel="shortcut icon" href="logo.png" type="image/png">
+ <link rel="apple-touch-icon" href="logo.png">
+ <meta name="msapplication-TileImage" content="logo.png">
+ <meta name="msapplication-TileColor" content="#0f1f14">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ emerald: { 50:'#e8f5e9',100:'#c8e6c9',200:'#a5d6a7',300:'#81c784',400:'#66bb6a',500:'#1a4d2e',600:'#2d6a3f',700:'#4a8c5a',800:'#0f2e1a',900:'#0a1f12',950:'#05140a' },
+ gold: { 50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#c8a45c',500:'#b8943f',600:'#a67c2e',700:'#8b6918',800:'#6b4f0a',900:'#4a3605' },
+ mint: { 50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d' },
+ obsidian: '#0f1f14',
+ midnight: '#1a2e1a',
+ onyx: '#0a1f12',
+ pearl: '#f0f5f2'
+ },
+ fontFamily: {
+ sans: ['Outfit','sans-serif'],
+ display: ['Space Grotesk','sans-serif'],
+ arabic: ['Amiri','serif']
+ }
+ }
+ }
+ }
+ </script>
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+</head>
+<body class="relative">
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar" style="width:0%"></div>
+
+<!-- BACKGROUNDS -->
+<div class="mesh-bg"></div>
+<div class="noise-overlay"></div>
+<div class="fixed inset-0 islamic-pattern opacity-30 pointer-events-none z-[2]"></div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
+ <div class="liquid-glass mx-3 mt-3 md:mx-6 md:mt-3 rounded-2xl px-4 md:px-8 py-3 md:py-4">
+ <div class="max-w-7xl mx-auto flex justify-between items-center">
+ <a href="#" class="flex items-center gap-10 md:gap-3 group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full liquid-glass-primary flex items-center justify-center pulse-ring-premium logo-container">
+ <div class="logo-spinner"></div>
+ <img src="logo.png" alt="Logo" class="w-10 h-10 md:w-6 md:h-6 object-contain rounded-full logo-image" id="navbarLogo">
+ </div>
+ <div class="hidden sm:block">
+ <p class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest leading-tight">Pondok Pesantren</p>
+ <p class="text-sm md:text-base font-bold tracking-tight leading-tight header-gradient-text">Daar Al Furqon</p>
+ </div>
+ <span class="sm:hidden font-bold tracking-tight text-sm header-gradient-text">Daar Al Furqon</span>
+ </a>
+ <div class="hidden lg:flex items-center gap-8">
+ <a href="#beranda" class="nav-link text-sm text-gray hover:text-[#1a4d2e] transition-colors">Beranda</a>
+ <a href="#profil" class="nav-link text-sm text-gray hover:text-[#1a4d2e] transition-colors">Profil</a>
+ <a href="#visi-misi" class="nav-link text-sm text-gray hover:text-[#1a4d2e] transition-colors">Visi & Misi</a>
+ <a href="#brosur" class="nav-link text-sm text-gray hover:text-[#1a4d2e] transition-colors">Brosur</a>
+ <a href="#kontak" class="nav-link text-sm text-gray hover:text-[#1a4d2e] transition-colors">Kontak</a>
+ </div>
+ <div class="flex items-center gap-3">
+ <a href="#" onclick="openContactModal(); return false;" class="hidden lg:inline-flex btn-primary text-white text-sm px-6 py-2.5 rounded-full font-semibold items-center gap-2 relative z-10 cursor-pointer">
+ <span class="relative z-10">Daftar</span>
+ </a>
+ <button class="lg:hidden hamburger flex flex-col gap-1 p-2 text-black" id="hamburger" onclick="toggleMobileMenu()">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+ </div>
+ </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="fixed inset-0 z-40 hidden" id="mobileMenuOverlay">
+ <div class="absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="mobileMenuBg" onclick="toggleMobileMenu()"></div>
+ <div class="mobile-menu absolute right-2 top-14 w-52 liquid-glass-strong rounded-xl p-4 pointer-events-auto shadow-2xl" id="mobileMenu">
+ <div class="space-y-1">
+ <a href="#beranda" onclick="toggleMobileMenu()" class="block text-sm font-medium text-[#1a2e1a]/80 hover:text-primary transition py-2 px-3 rounded-lg hover:bg-[#1a2e1a]/5">Beranda</a>
+ <a href="#profil" onclick="toggleMobileMenu()" class="block text-sm font-medium text-[#1a2e1a]/80 hover:text-primary transition py-2 px-3 rounded-lg hover:bg-[#1a2e1a]/5">Profil</a>
+ <a href="#visi-misi" onclick="toggleMobileMenu()" class="block text-sm font-medium text-[#1a2e1a]/80 hover:text-primary transition py-2 px-3 rounded-lg hover:bg-[#1a2e1a]/5">Visi & Misi</a>
+ <a href="#brosur" onclick="toggleMobileMenu()" class="block text-sm font-medium text-[#1a2e1a]/80 hover:text-primary transition py-2 px-3 rounded-lg hover:bg-[#1a2e1a]/5">Brosur</a>
+ <a href="#kontak" onclick="toggleMobileMenu()" class="block text-sm font-medium text-[#1a2e1a]/80 hover:text-primary transition py-2 px-3 rounded-lg hover:bg-[#1a2e1a]/5">Kontak</a>
+ </div>
+ <div class="mt-2 pt-2 border-t border-[#1a2e1a]/10">
+ <a href="#" onclick="toggleMobileMenu(); openContactModal(); return false;" class="btn-primary w-full text-center text-white py-2 rounded-lg font-medium block relative z-10 text-xs cursor-pointer">
+ <span class="relative z-10">Daftar</span>
+ </a>
+ </div>
+ </div>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
+<!-- VIDEO BACKGROUND -->
+<div class="absolute inset-0 w-full h-full overflow-hidden z-0">
+ <video 
+  autoplay 
+  muted 
+  loop 
+  playsinline 
+  poster=""
+  class="absolute inset-0 w-full h-full object-cover"
+  style="transform: scale(1.1);"
+ >
+  <source src="video.mp4" type="video/mp4">
+ </video>
+ <!-- White transparent overlay -->
+ <div class="absolute inset-0 bg-white/75" style="backdrop-filter: blur(-2px);"></div>
+</div>
+
+ <div class="absolute top-1/4 left-1/4 w-48 md:w-64 h-48 md:h-64 rounded-full bg-[#1a4d2e]/10 blur-3xl float"></div>
+ <div class="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 rounded-full bg-[#c8a45c]/10 blur-3xl float float-delay-1"></div>
+ <div class="absolute top-1/2 right-1/3 w-32 md:w-48 h-32 md:h-48 rounded-full bg-[#1a4d2e]/6 blur-3xl float float-delay-2"></div>
+ <div class="absolute bottom-1/3 left-1/3 w-40 h-40 rounded-full bg-[#d4b76a]/6 blur-3xl float-slow"></div>
+
+ <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] pointer-events-none hidden lg:block">
+ <div class="orbit w-3 h-3 bg-[#d4b76a]/60 rounded-full" style="animation-duration: 25s;"></div>
+ <div class="orbit w-2 h-2 bg-[#1a4d2e]/60 rounded-full" style="animation-duration: 35s; animation-direction: reverse;"></div>
+ <div class="orbit w-4 h-4 border border-[#d4b76a]/30 rounded-full" style="animation-duration: 45s;"></div>
+ </div>
+
+ <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 md:pt-32 pb-20">
+ <div class="reveal-animated mb-6 md:mb-8">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mx-auto">
+ <i class="fas fa-star text-xs"></i>
+ <span>Sejak 1984</span>
+ </div>
+ </div>
+
+ <div class="reveal mb-4 md:mb-6">
+ <h1 class="kinetic-title text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-[#1a2e1a] mb-1 md:mb-2">
+ <span style="animation-delay:0.1s">D</span><span style="animation-delay:0.15s">a</span><span style="animation-delay:0.2s">a</span><span style="animation-delay:0.25s">r</span>
+ <span class="text-gradient-primary" style="animation-delay:0.3s">A</span><span class="text-gradient-primary" style="animation-delay:0.35s">l</span>
+ <span class="text-gradient-primary" style="animation-delay:0.4s">F</span><span class="text-gradient-primary" style="animation-delay:0.45s">u</span><span class="text-gradient-primary" style="animation-delay:0.5s">r</span><span class="text-gradient-primary" style="animation-delay:0.55s">q</span><span class="text-gradient-primary" style="animation-delay:0.6s">o</span><span class="text-gradient-primary" style="animation-delay:0.65s">n</span>
+ </h1>
+ <h2 class="kinetic-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#1a2e1a]/60" style="animation-delay:0.7s">
+ <span style="animation-delay:0.7s">K</span><span style="animation-delay:0.75s">u</span><span style="animation-delay:0.8s">d</span><span style="animation-delay:0.85s">u</span><span style="animation-delay:0.9s">s</span>
+ </h2>
+ </div>
+
+ <div class="reveal-animated mb-6 md:mb-8">
+ <p class="arabic-callout text-[#1a4d2e]/70">"Lancarkan Al-Qur'anmu seperti lancarnya alfatihahmu"</p>
+ </div>
+
+ <div class="reveal mb-8 md:mb-12 max-w-2xl mx-auto px-4">
+ <p class="text-base md:text-lg text-[#4a6b4a] leading-relaxed">
+ Membangun generasi Qur'ani yang berakhlak mulia, berilmu luas, dan siap menjadi pemimpin masa depan bangsa.
+ </p>
+ </div>
+
+ <div class="reveal flex flex-wrap justify-center gap-3 md:gap-4 px-4">
+ <a href="#brosur" class="btn-primary text-[#1a2e1a] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm tracking-wide uppercase flex items-center gap-2 md:gap-3 relative z-10 group">
+ <span class="relative z-10">Lihat Brosur</span>
+ <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
+ </a>
+ <a href="#profil" class="btn-ghost text-[#1a2e1a] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm tracking-wide uppercase flex items-center gap-2 md:gap-3">
+ <span>Jelajahi</span>
+ <i class="fas fa-chevron-down"></i>
+ </a>
+ </div>
+
+ <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2">
+ <div class="w-5 h-9 md:w-6 md:h-10 rounded-full border-2 border-[#1a4d2e]/20 flex justify-center pt-1.5 md:pt-2">
+ <div class="w-0.5 h-1.5 md:h-2 bg-[#1a4d2e] rounded-full scroll-bounce"></div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="relative z-10 py-6 md:py-8 overflow-hidden border-y border-[#1a2e1a]/5">
+ <div class="marquee-track whitespace-nowrap">
+ <span class="inline-flex items-center gap-4 md:gap-8 px-4 md:px-8 text-xs md:text-sm text-[#6b8b6b] uppercase tracking-widest">
+ <span class="text-[#1a4d2e]"><i class="fas fa-mosque mr-1 md:mr-2"></i>Pondok Pesantren</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Tahfidz Al-Qur'an</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#1a4d2e]">Madrasah Diniyah</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Pembinaan Akhlak</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#c8a45c]">4 Kompleks</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Putra & Putri</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#1a4d2e]">Sejak 1984</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ </span>
+ <span class="inline-flex items-center gap-4 md:gap-8 px-4 md:px-8 text-xs md:text-sm text-[#6b8b6b] uppercase tracking-widest">
+ <span class="text-[#1a4d2e]"><i class="fas fa-mosque mr-1 md:mr-2"></i>Pondok Pesantren</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Tahfidz Al-Qur'an</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#1a4d2e]">Madrasah Diniyah</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Pembinaan Akhlak</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#c8a45c]">4 Kompleks</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span>Putra & Putri</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ <span class="text-[#1a4d2e]">Sejak 1984</span>
+ <span class="w-1 h-1 bg-[#6b8b6b] rounded-full"></span>
+ </span>
+ </div>
+</div>
+
+<div class="section-divider my-4"></div>
+
+<!-- ===== PROFIL SECTION ===== -->
+<section id="profil" class="relative z-10 py-16 md:py-24 lg:py-32">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12 md:mb-20 title-fade-left">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mb-4 md:mb-6 inline-flex">
+ <i class="fas fa-history text-xs"></i>
+ <span>Sejarah</span>
+ </div>
+ <h2 class="kinetic-title text-3xl md:text-4xl lg:text-6xl text-[#1a2e1a] mb-4 md:mb-6">Profil Pondok</h2>
+ <p class="text-[#4a6b4a] text-base md:text-lg max-w-2xl mx-auto px-4">Perjalanan empat dekade membangun generasi Qur'ani dari rumah sederhana hingga empat kompleks.</p>
+ </div>
+
+ <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+ <!-- Pondok 1 -->
+ <div class="reveal-scroll liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 rounded-xl liquid-glass-primary flex items-center justify-center">
+ <i class="fas fa-mosque text-[#1a4d2e] text-sm"></i>
+ </div>
+ <span class="number-badge text-[#1a4d2e]">Est. 1984</span>
+ </div>
+ <h3 class="text-xl font-display font-bold text-[#1a2e1a] mb-3">Pondok 1 — Pusat Putra</h3>
+ <div class="pondok-read-more-wrap">
+ <div class="pondok-read-more-content" id="pondok1Content">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Kompleks I merupakan cikal bakal berdirinya Pondok Pesantren Daar Al-Furqon yang berlokasi di Kalugawen, Desa Janggalan, Kota Kudus, sekitar ±400 meter di sebelah selatan Menara Kudus. Pondok pesantren ini didirikan pada tahun 1984 dan diasuh oleh K.H.S. Abdul Qodir Umar Basyir.</p>
+ <div class="additional-story" id="pondok1Extra" style="display:none;">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Nama Daar Al-Furqon yang berarti "Rumah Al-Qur'an" dipilih dengan harapan pesantren ini menjadi tempat lahirnya kader-kader Islam yang Qur'ani, berakhlak mulia, serta mampu mengamalkan ilmunya di tengah masyarakat.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Pada awal berdirinya, kegiatan pesantren dilaksanakan secara sederhana di rumah kediaman pendiri. Di tempat inilah para santri belajar membaca dan menghafal Al-Qur'an, mengkaji kitab-kitab Islam, serta mendapatkan pembinaan akhlak dan kehidupan pesantren secara langsung dari pengasuh.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Seiring bertambahnya jumlah santri dan meningkatnya kepercayaan masyarakat, pada tahun 1986 dibangun sebuah gedung sederhana di depan rumah beliau atas usulan para santri. Pembangunan tersebut menjadi langkah awal berkembangnya Pondok Pesantren Daar Al-Furqon. Selanjutnya pada tahun 1992 dilakukan pengembangan yang lebih besar sehingga kompleks ini tumbuh menjadi pusat kegiatan pesantren yang lebih representatif.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Setelah wafatnya pendiri pada tahun 2009, estafet kepemimpinan pesantren dilanjutkan oleh putra beliau, K.H.S. Ahmad Abdul Basith Abdul Qodir Umar Basyir. Di bawah pengasuhan beliau, Pondok Pesantren Daar Al-Furqon terus berkembang baik dari segi jumlah santri, sarana prasarana, maupun program pendidikan, tanpa meninggalkan nilai-nilai dan tradisi yang telah diwariskan oleh pendiri pesantren.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Hingga saat ini, Kompleks I tetap menjadi pusat kegiatan Pondok Pesantren Daar Al-Furqon. Berbagai kegiatan pendidikan Al-Qur'an, tahfidz, pengajian kitab salaf, pembinaan akhlak, serta kegiatan keagamaan lainnya terus dilaksanakan di kompleks ini.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Sebagai kompleks pertama dan pusat sejarah berdirinya pesantren, Kompleks I juga menjadi tempat penyelenggaraan berbagai kegiatan bersama yang melibatkan seluruh santri dari berbagai kompleks, seperti pengajian umum, peringatan hari-hari besar Islam, khatmil Qur'an, haflah akhirussanah, serta kegiatan kepesantrenan lainnya. Dengan perannya tersebut, Kompleks I tidak hanya menjadi tempat belajar, tetapi juga menjadi simbol persatuan dan pusat kegiatan bersama bagi seluruh keluarga besar Pondok Pesantren Daar Al-Furqon.</p>
+ </div>
+ </div>
+ <div class="pondok-read-more-fade"></div>
+ </div>
+ <button class="pondok-read-more-btn" onclick="togglePondokReadMore('pondok1Content', 'pondok1Extra', this)" id="pondok1Btn">
+ <span>Baca Selengkapnya</span> <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="img-reveal logo-container rounded-2xl mt-4">
+ <div class="img-spinner logo-spinner"></div>
+ <img src="kom1.jpg" alt="Pondok 1" class="w-full h-48 object-cover rounded-2xl lazy-img logo-image" loading="lazy" id="cardImg1">
+ </div>
+ </div>
+
+ <!-- Pondok 2 -->
+ <div class="reveal-scroll liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 rounded-xl bg-[#c45c7a]/10 border border-[#c45c7a]/20 flex items-center justify-center">
+ <i class="fas fa-female text-[#c45c7a] text-sm"></i>
+ </div>
+ <span class="number-badge text-[#c45c7a]">Est. 2005</span>
+ </div>
+ <h3 class="text-xl font-display font-bold text-[#1a2e1a] mb-3">Pondok 2 — Putri</h3>
+ <div class="pondok-read-more-wrap">
+ <div class="pondok-read-more-content" id="pondok2Content">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Didirikan atas dorongan wali santri untuk membuka pesantren khusus putri dengan sistem pendidikan yang sama.</p>
+ <div class="additional-story" id="pondok2Extra" style="display:none;">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Perkembangan Pondok Pesantren Daar Al-Furqon mendapat sambutan luas dari masyarakat. Banyak wali santri dan tokoh masyarakat mengusulkan agar dibuka pesantren khusus putri yang memiliki sistem pendidikan dan pembinaan yang sama dengan pondok putra pusat. Atas dorongan tersebut, pada tahun 2005 didirikan Kompleks II atau Pondok Pesantren Putri yang berlokasi sekitar 100 meter dari kompleks pusat.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Kehadiran kompleks ini membuka kesempatan bagi para santri putri untuk memperoleh pendidikan Al-Qur'an dan ilmu agama dalam lingkungan yang kondusif dan sesuai dengan kebutuhan mereka. Kompleks Putri saat ini diasuh oleh ustadzah Hj. Khairin Nida bersama ustadzah Hj. Achla Ainussalamah.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Berbagai kegiatan pembelajaran Al-Qur'an, kitab kuning, pembinaan akhlak, serta pendidikan keislaman terus dikembangkan guna mencetak muslimah yang berilmu, berakhlak, dan berpegang teguh pada nilai-nilai Al-Qur'an.</p>
+ </div>
+ </div>
+ <div class="pondok-read-more-fade"></div>
+ </div>
+ <button class="pondok-read-more-btn" onclick="togglePondokReadMore('pondok2Content', 'pondok2Extra', this)" id="pondok2Btn">
+ <span>Baca Selengkapnya</span> <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="img-reveal logo-container rounded-2xl mt-4">
+ <div class="img-spinner logo-spinner"></div>
+ <img src="kom2.JPG" alt="Pondok 2" class="w-full h-48 object-cover rounded-2xl lazy-img logo-image" loading="lazy" id="cardImg2">
+ </div>
+ </div>
+
+ <!-- Pondok 3 -->
+ <div class="reveal-scroll liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 rounded-xl bg-[#3a6b8c]/10 border border-[#3a6b8c]/20 flex items-center justify-center">
+ <i class="fas fa-school text-[#3a6b8c] text-sm"></i>
+ </div>
+ <span class="number-badge text-[#3a6b8c]">Est. 2017</span>
+ </div>
+ <h3 class="text-xl font-display font-bold text-[#1a2e1a] mb-3">Pondok 3 — Putra Sekolah</h3>
+ <div class="pondok-read-more-wrap">
+ <div class="pondok-read-more-content" id="pondok3Content">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Kompleks khusus bagi santri putra yang menempuh pendidikan formal dengan sistem pembinaan terintegrasi.</p>
+ <div class="additional-story" id="pondok3Extra" style="display:none;">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Memasuki era modern, jumlah santri putra yang menempuh pendidikan formal di berbagai madrasah dan sekolah sekitar Kudus mengalami peningkatan yang cukup signifikan. Kondisi tersebut mendorong Pondok Pesantren Daar Al-Furqon untuk menyediakan lingkungan yang lebih representatif dan kondusif bagi para santri putra agar dapat menjalankan pendidikan formal sekaligus pendidikan pesantren secara seimbang.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Sebagai jawaban atas kebutuhan tersebut, pada tahun 2017 didirikan Kompleks III Pondok Putra yang berlokasi sekitar 300 meter dari pusat pesantren. Kompleks ini secara khusus diperuntukkan bagi santri putra yang sedang menempuh pendidikan formal, baik di Madrasah Qudsiyyah, TBS, MA, SMA, SMK, maupun lembaga pendidikan lainnya di wilayah Kudus dan sekitarnya.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Keberadaan Kompleks III menjadi langkah strategis dalam mendukung para santri putra agar mampu mengembangkan potensi akademik tanpa meninggalkan tradisi kepesantrenan. Di samping mengikuti kegiatan belajar di sekolah, para santri tetap diwajibkan mengikuti program pembelajaran Al-Qur'an, kajian kitab salaf, pembinaan ibadah, serta pendidikan akhlak yang menjadi ciri khas Pondok Pesantren Daar Al-Furqon.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Dengan sistem pembinaan yang terintegrasi antara pendidikan formal dan pendidikan pesantren, Kompleks III diharapkan mampu melahirkan generasi muda Islam yang memiliki keluasan ilmu pengetahuan, kedalaman pemahaman agama, akhlakul karimah, serta kesiapan untuk berkhidmah kepada masyarakat, agama, dan bangsa. Hingga saat ini, Kompleks III terus menjadi salah satu pusat pembinaan santri putra pelajar yang berkomitmen menjaga nilai-nilai Al-Qur'an dan tradisi keilmuan pesantren.</p>
+ </div>
+ </div>
+ <div class="pondok-read-more-fade"></div>
+ </div>
+ <button class="pondok-read-more-btn" onclick="togglePondokReadMore('pondok3Content', 'pondok3Extra', this)" id="pondok3Btn">
+ <span>Baca Selengkapnya</span> <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="img-reveal logo-container rounded-2xl mt-4">
+ <div class="img-spinner logo-spinner"></div>
+ <img src="kom3.jpg" alt="Pondok 3" class="w-full h-48 object-cover rounded-2xl lazy-img logo-image" loading="lazy" id="cardImg3">
+ </div>
+ </div>
+
+ <!-- Pondok 4 -->
+ <div class="reveal-scroll liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 rounded-xl bg-[#7a5c9c]/10 border border-[#7a5c9c]/20 flex items-center justify-center">
+ <i class="fas fa-graduation-cap text-[#7a5c9c] text-sm"></i>
+ </div>
+ <span class="number-badge text-[#7a5c9c]">Est. 2026</span>
+ </div>
+ <h3 class="text-xl font-display font-bold text-[#1a2e1a] mb-3">Pondok 4 — Putri Sekolah</h3>
+ <div class="pondok-read-more-wrap">
+ <div class="pondok-read-more-content" id="pondok4Content">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Kompleks khusus bagi santri putri yang menempuh pendidikan formal dengan suasana tertib dan religius.</p>
+ <div class="additional-story" id="pondok4Extra" style="display:none;">
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Seiring bertambahnya jumlah santri putri yang menempuh pendidikan formal di berbagai madrasah dan sekolah di Kabupaten Kudus, kebutuhan akan lingkungan asrama yang lebih luas, nyaman, dan kondusif semakin meningkat. Untuk menjawab kebutuhan tersebut, pada tahun 2026 Pondok Pesantren Daar Al-Furqon mendirikan Kompleks IV sebagai kompleks khusus bagi santri putri yang sedang menempuh pendidikan formal.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Kompleks IV hadir sebagai pengembangan dari Pondok Putri yang telah berdiri sebelumnya, sekaligus menjadi bentuk komitmen pesantren dalam memberikan pelayanan pendidikan yang semakin baik bagi para santri putri. Kompleks ini diperuntukkan bagi santri yang bersekolah di berbagai lembaga pendidikan formal, baik tingkat SMP/MTs, SMA/MA, maupun lembaga pendidikan lainnya di wilayah Kudus.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Selain menjadi tempat tinggal, Kompleks IV dirancang sebagai lingkungan pembinaan yang mendukung keseimbangan antara pendidikan formal dan pendidikan pesantren. Para santri tidak hanya dibimbing dalam bidang akademik, tetapi juga mendapatkan pembinaan Al-Qur'an, pengkajian kitab-kitab Islam, pembentukan akhlakul karimah, serta pendidikan karakter yang menjadi ciri khas Pondok Pesantren Daar Al-Furqon.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Melalui suasana yang tertib, religius, dan penuh kekeluargaan, Kompleks IV diharapkan mampu melahirkan generasi muslimah yang berilmu, berakhlak mulia, mandiri, serta memiliki semangat mengamalkan nilai-nilai Al-Qur'an dalam kehidupan sehari-hari.</p>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed mt-3">Pendirian Kompleks IV menjadi bukti bahwa semangat pendidikan dan dakwah yang diwariskan para pendiri terus berkembang seiring kebutuhan zaman. Dari sebuah rumah sederhana yang menjadi tempat mengaji pada tahun 1984, Pondok Pesantren Daar Al-Furqon kini telah berkembang menjadi empat kompleks pendidikan yang berperan dalam membina generasi Islam, baik putra maupun putri, agar menjadi insan yang Qur'ani, berilmu, dan bermanfaat bagi agama, bangsa, dan masyarakat.</p>
+ </div>
+ </div>
+ <div class="pondok-read-more-fade"></div>
+ </div>
+ <button class="pondok-read-more-btn" onclick="togglePondokReadMore('pondok4Content', 'pondok4Extra', this)" id="pondok4Btn">
+ <span>Baca Selengkapnya</span> <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="img-reveal logo-container rounded-2xl mt-4">
+ <div class="img-spinner logo-spinner"></div>
+ <img src="kom4.jpeg" alt="Pondok 4" class="w-full h-48 object-cover rounded-2xl lazy-img logo-image" loading="lazy" id="cardImg4">
+ </div>
+ </div>
+ </div>
+
+ <!-- Leadership -->
+ <div class="reveal mt-8 md:mt-16">
+ <div class="liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-10 card-premium">
+ <div class="text-center mb-6 md:mb-10">
+ <h3 class="text-xl md:text-2xl font-display font-bold text-[#1a2e1a] mb-2">Pengasuh & Kepemimpinan</h3>
+ <p class="text-[#4a6b4a] text-sm md:text-base">Diteruskan dengan semangat yang sama</p>
+ </div>
+ <div class="grid md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
+ <div class="liquid-glass rounded-2xl p-4 md:p-6 flex items-center gap-3 md:gap-4 hover:bg-[#1a4d2e]/5 transition cursor-pointer group">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full liquid-glass-primary flex items-center justify-center group-hover:scale-110 transition">
+ <i class="fas fa-user-tie text-[#1a4d2e] text-sm md:text-base"></i>
+ </div>
+ <div>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider mb-0.5">Pendiri (1984 — 2009)</p>
+ <p class="font-bold text-[#1a2e1a] text-sm md:text-base">KH. S. Abdul Qodir bin Umar Basyir</p>
+ </div>
+ </div>
+ <div class="liquid-glass rounded-2xl p-4 md:p-6 flex items-center gap-3 md:gap-4 hover:bg-[#1a4d2e]/5 transition cursor-pointer group">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full liquid-glass-primary flex items-center justify-center group-hover:scale-110 transition">
+ <i class="fas fa-user-tie text-[#1a4d2e] text-sm md:text-base"></i>
+ </div>
+ <div>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider mb-0.5">Pengasuh Saat Ini</p>
+ <p class="font-bold text-[#1a2e1a] text-sm md:text-base">KH. S. Ahmad Abdul Basith</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== VISI & MISI SECTION ===== -->
+<section id="visi-misi" class="relative z-10 py-16 md:py-24 lg:py-32">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12 md:mb-20 title-fade-left">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mb-4 md:mb-6 inline-flex">
+ <i class="fas fa-compass text-xs"></i>
+ <span>Arah & Tujuan</span>
+ </div>
+ <h2 class="kinetic-title text-3xl md:text-4xl lg:text-6xl text-[#1a2e1a] mb-4 md:mb-6">Visi & Misi</h2>
+ <p class="text-[#4a6b4a] text-base md:text-lg max-w-2xl mx-auto px-4">Komitmen kami dalam membangun generasi Qur'ani yang berakhlak mulia</p>
+ </div>
+
+ <div class="grid lg:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+ <!-- Visi -->
+ <div class="reveal liquid-glass-strong rounded-2xl md:rounded-3xl p-8 md:p-10 card-premium relative overflow-hidden">
+ <div class="absolute -top-20 -right-20 w-32 h-32 bg-[#1a4d2e]/10 rounded-full blur-3xl"></div>
+ <div class="relative z-10">
+ <div class="flex items-center gap-4 md:gap-5 mb-6 md:mb-8">
+ <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl liquid-glass-primary flex items-center justify-center shrink-0">
+ <i class="fas fa-eye text-[#1a4d2e] text-xl md:text-2xl"></i>
+ </div>
+ <h3 class="text-2xl md:text-3xl font-display font-bold text-[#1a2e1a]">Visi</h3>
+ </div>
+ <p class="text-[#3a5a3a] text-base md:text-lg leading-relaxed">
+ Menjadikan Pondok Pesantren Daar Al Furqon Kudus sebagai <span class="text-[#1a4d2e] font-semibold">pusat pembinaan generasi Qur'ani</span> yang berakhlak mulia, berilmu luas, dan siap menjadi pemimpin masa depan bangsa dengan fondasi keimanan yang kokoh.
+ </p>
+ </div>
+ </div>
+
+ <!-- Misi -->
+ <div class="reveal liquid-glass-strong rounded-2xl md:rounded-3xl p-8 md:p-10 card-premium relative overflow-hidden" style="transition-delay:0.15s">
+ <div class="absolute -top-20 -right-20 w-32 h-32 bg-[#c8a45c]/10 rounded-full blur-3xl"></div>
+ <div class="relative z-10">
+ <div class="flex items-center gap-4 md:gap-5 mb-6 md:mb-8">
+ <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#c8a45c]/10 border border-gold-500/20 flex items-center justify-center shrink-0">
+ <i class="fas fa-bullseye text-[#c8a45c] text-xl md:text-2xl"></i>
+ </div>
+ <h3 class="text-2xl md:text-3xl font-display font-bold text-[#1a2e1a]">Misi</h3>
+ </div>
+ <ul class="space-y-3 md:space-y-4">
+ <li class="flex items-start gap-3 md:gap-4 text-[#3a5a3a] text-sm md:text-base">
+ <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center shrink-0 mt-0.5">
+ <i class="fas fa-check text-[#1a4d2e] text-[10px] md:text-xs"></i>
+ </div>
+ <span>Menyelenggarakan pendidikan Al-Qur'an berbasis tahfidz dan tafsir berkualitas</span>
+ </li>
+ <li class="flex items-start gap-3 md:gap-4 text-[#3a5a3a] text-sm md:text-base">
+ <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center shrink-0 mt-0.5">
+ <i class="fas fa-check text-[#1a4d2e] text-[10px] md:text-xs"></i>
+ </div>
+ <span>Membentuk akhlakul karimah melalui pembinaan ibadah dan mu'amalah</span>
+ </li>
+ <li class="flex items-start gap-3 md:gap-4 text-[#3a5a3a] text-sm md:text-base">
+ <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center shrink-0 mt-0.5">
+ <i class="fas fa-check text-[#1a4d2e] text-[10px] md:text-xs"></i>
+ </div>
+ <span>Mengintegrasikan pendidikan pesantren dengan pendidikan formal</span>
+ </li>
+ <li class="flex items-start gap-3 md:gap-4 text-[#3a5a3a] text-sm md:text-base">
+ <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center shrink-0 mt-0.5">
+ <i class="fas fa-check text-[#1a4d2e] text-[10px] md:text-xs"></i>
+ </div>
+ <span>Mencetak kader dakwah dan pemimpin berwawasan kebangsaan</span>
+ </li>
+ <li class="flex items-start gap-3 md:gap-4 text-[#3a5a3a] text-sm md:text-base">
+ <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center shrink-0 mt-0.5">
+ <i class="fas fa-check text-[#1a4d2e] text-[10px] md:text-xs"></i>
+ </div>
+ <span>Membangun lingkungan pesantren yang kondusif dan penuh kekeluargaan</span>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== BROSUR SECTION ===== -->
+<section id="brosur" class="relative z-10 py-16 md:py-24 lg:py-32">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12 md:mb-20 title-fade-left">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mb-4 md:mb-6 inline-flex">
+ <i class="fas fa-book-open text-xs"></i>
+ <span>Informasi Lengkap</span>
+ </div>
+ <h2 class="kinetic-title text-3xl md:text-4xl lg:text-6xl text-[#1a2e1a] mb-4 md:mb-6">Brosur PPDB</h2>
+ <p class="text-[#4a6b4a] text-base md:text-lg max-w-2xl mx-auto px-4">Unduh brosur resmi Pondok Pesantren Daar Al Furqon Kudus</p>
+ </div>
+
+ <!-- Mobile: Horizontal Scroll -->
+ <div class="lg:hidden -mx-4 px-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
+ <div class="flex gap-4 w-max">
+ <!-- Brosur 1 Mobile -->
+ <div class="reveal w-[280px] snap-start flex-shrink-0">
+ <div class="liquid-glass rounded-2xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:176px;">
+ <div class="img-spinner"></div>
+ <img src="pondok1.jpeg" alt="Brosur Putra Pusat" class="w-full h-44 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-3 left-3 z-10">
+ <span class="premium-tag bg-white/95 border-2 border-[#1a4d2e]/30 text-[#1a4d2e] text-[10px] shadow-lg font-bold">Putra Pusat</span>
+ </div>
+ </div>
+ <div class="p-5">
+ <h3 class="text-base font-display font-bold text-[#1a2e1a] mb-1">PP Daar Al Furqon 1</h3>
+ <p class="text-[#4a6b4a] text-xs mb-3">Pusat Putra — Non-formal</p>
+ <div class="flex items-center justify-between pt-3 border-t border-[#1a2e1a]/5 relative z-10">
+ <a href="https://maps.app.goo.gl/TJubb9QmfbG7ZxHS8" target="_blank" rel="noopener" class="text-xs text-[#4a6b4a] hover:text-[#1a4d2e] transition flex items-center gap-1">
+ <i class="fas fa-map-marker-alt text-[#1a4d2e]/60 text-[10px]"></i> Lokasi
+ </a>
+ <a href="brosur/pondok1.jpeg" download class="text-[#1a4d2e] text-xs font-medium hover:text-[#2d6a3f] transition flex items-center gap-1">
+ Unduh <i class="fas fa-arrow-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- Brosur 2 Mobile -->
+ <div class="reveal w-[280px] snap-start flex-shrink-0" style="transition-delay:0.1s">
+ <div class="liquid-glass rounded-2xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:176px;">
+ <div class="img-spinner"></div>
+ <img src="pondok2.jpeg" alt="Brosur Putri" class="w-full h-44 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-3 left-3 z-10">
+ <span class="premium-tag bg-white/95 border-2 border-[#c45c7a]/40 text-[#c45c7a] text-[10px] shadow-lg font-bold">Putri</span>
+ </div>
+ </div>
+ <div class="p-5">
+ <h3 class="text-base font-display font-bold text-[#1a2e1a] mb-1">PP Daar Al Furqon 2</h3>
+ <p class="text-[#4a6b4a] text-xs mb-3">Putri — Non-formal</p>
+ <div class="flex items-center justify-between pt-3 border-t border-[#1a2e1a]/5 relative z-10">
+ <a href="https://maps.app.goo.gl/uymRJXHQ25tLrR4p7" target="_blank" rel="noopener" class="text-xs text-[#4a6b4a] hover:text-[#c45c7a] transition flex items-center gap-1">
+ <i class="fas fa-map-marker-alt text-[#c45c7a]/60 text-[10px]"></i> Lokasi
+ </a>
+ <a href="brosur/pondok2.png" download class="text-[#1a4d2e] text-xs font-medium hover:text-[#2d6a3f] transition flex items-center gap-1">
+ Unduh <i class="fas fa-arrow-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- Brosur 3 Mobile -->
+ <div class="reveal w-[280px] snap-start flex-shrink-0" style="transition-delay:0.2s">
+ <div class="liquid-glass rounded-2xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:176px;">
+ <div class="img-spinner"></div>
+ <img src="pondok3.jpg" alt="Brosur Putra Sekolah" class="w-full h-44 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-3 left-3 z-10">
+ <span class="premium-tag bg-white/95 border-2 border-[#3a6b8c]/40 text-[#3a6b8c] text-[10px] shadow-lg font-bold">Putra Sekolah</span>
+ </div>
+ </div>
+ <div class="p-5">
+ <h3 class="text-base font-display font-bold text-[#1a2e1a] mb-1">PP Daar Al Furqon 3</h3>
+ <p class="text-[#4a6b4a] text-xs mb-3">Putra — Sekolah</p>
+ <div class="flex items-center justify-between pt-3 border-t border-[#1a2e1a]/5 relative z-10">
+ <a href="https://maps.app.goo.gl/okjrKqKk4fu46V4u5" target="_blank" rel="noopener" class="text-xs text-[#4a6b4a] hover:text-[#3a6b8c] transition flex items-center gap-1">
+ <i class="fas fa-map-marker-alt text-[#3a6b8c]/60 text-[10px]"></i> Lokasi
+ </a>
+ <a href="brosur/pondok3.jpg" download class="text-[#1a4d2e] text-xs font-medium hover:text-[#2d6a3f] transition flex items-center gap-1">
+ Unduh <i class="fas fa-arrow-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- Brosur 4 Mobile -->
+ <div class="reveal w-[280px] snap-start flex-shrink-0" style="transition-delay:0.3s">
+ <div class="liquid-glass rounded-2xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:176px;">
+ <div class="img-spinner"></div>
+ <img src="pondok4.jpeg" alt="Brosur Putri Sekolah" class="w-full h-44 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-3 left-3 z-10">
+ <span class="premium-tag bg-white/95 border-2 border-[#7a5c9c]/40 text-[#7a5c9c] text-[10px] shadow-lg font-bold">Putri Sekolah</span>
+ </div>
+ </div>
+ <div class="p-5">
+ <h3 class="text-base font-display font-bold text-[#1a2e1a] mb-1">PP Daar Al Furqon 4</h3>
+ <p class="text-[#4a6b4a] text-xs mb-3">Putri — Sekolah</p>
+ <div class="flex items-center justify-between pt-3 border-t border-[#1a2e1a]/5 relative z-10">
+ <a href="https://maps.app.goo.gl/3Ra1A7xNbFj8sKC87" target="_blank" rel="noopener" class="text-xs text-[#4a6b4a] hover:text-[#7a5c9c] transition flex items-center gap-1">
+ <i class="fas fa-map-marker-alt text-[#7a5c9c]/60 text-[10px]"></i> Lokasi
+ </a>
+ <a href="brosur/pondok4.png" download class="text-[#1a4d2e] text-xs font-medium hover:text-[#2d6a3f] transition flex items-center gap-1">
+ Unduh <i class="fas fa-arrow-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Swipe hint -->
+ <div class="lg:hidden text-center mt-2 mb-4">
+ <p class="text-[#6b8b6b] text-xs flex items-center justify-center gap-2">
+ <i class="fas fa-hand-pointer swipe-hint"></i>
+ Geser untuk melihat lebih
+ </p>
+ </div>
+
+ <!-- Desktop Bento Grid -->
+ <div class="hidden lg:grid bento-grid">
+ <div class="bento-item col-span-1 reveal stagger-1">
+ <div class="liquid-glass rounded-3xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:192px;">
+ <div class="img-spinner"></div>
+ <img src="pondok1.jpeg" alt="Brosur Putra Pusat" class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-4 left-4">
+ <span class="premium-tag liquid-glass-primary text-[#2d6a3f] text-xs">Putra Pusat</span>
+ </div>
+ </div>
+ <div class="p-6">
+ <h3 class="text-lg font-display font-bold text-[#1a2e1a] mb-2">PP Daar Al Furqon 1</h3>
+ <p class="text-[#4a6b4a] text-sm mb-4">Pusat Putra — Program non-formal</p>
+ <div class="flex items-center justify-between pt-4 border-t border-[#1a2e1a]/5">
+ <a href="https://maps.app.goo.gl/TJubb9QmfbG7ZxHS8" target="_blank" rel="noopener" class="text-sm text-[#4a6b4a] hover:text-[#1a4d2e] transition flex items-center gap-2">
+ <i class="fas fa-map-marker-alt text-[#1a4d2e]/60"></i> Lokasi
+ </a>
+ <a href="brosur/pondok1.jpeg" download class="text-[#1a4d2e] text-sm font-medium hover:text-[#2d6a3f] transition flex items-center gap-2">
+ Unduh <i class="fas fa-arrow-right text-xs"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="bento-item col-span-1 reveal stagger-2">
+ <div class="liquid-glass rounded-3xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:192px;">
+ <div class="img-spinner"></div>
+ <img src="pondok2.jpeg" alt="Brosur Putri" class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-4 left-4">
+ <span class="premium-tag bg-[#c45c7a]/10 border border-[#c45c7a]/20 text-[#d47a8a] text-xs">Putri</span>
+ </div>
+ </div>
+ <div class="p-6">
+ <h3 class="text-lg font-display font-bold text-[#1a2e1a] mb-2">PP Daar Al Furqon 2</h3>
+ <p class="text-[#4a6b4a] text-sm mb-4">Putri — Program non-formal</p>
+ <div class="flex items-center justify-between pt-4 border-t border-[#1a2e1a]/5">
+ <a href="https://maps.app.goo.gl/uymRJXHQ25tLrR4p7" target="_blank" rel="noopener" class="text-sm text-[#4a6b4a] hover:text-[#c45c7a] transition flex items-center gap-2">
+ <i class="fas fa-map-marker-alt text-[#c45c7a]/60"></i> Lokasi
+ </a>
+ <a href="brosur/pondok2.png" download class="text-[#1a4d2e] text-sm font-medium hover:text-[#2d6a3f] transition flex items-center gap-2">
+ Unduh <i class="fas fa-arrow-right text-xs"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="bento-item col-span-1 reveal stagger-3">
+ <div class="liquid-glass rounded-3xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:192px;">
+ <div class="img-spinner"></div>
+ <img src="pondok3.jpg" alt="Brosur Putra Sekolah" class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-4 left-4">
+ <span class="premium-tag bg-[#3a6b8c]/10 border border-[#3a6b8c]/20 text-[#5a8bac] text-xs">Putra Sekolah</span>
+ </div>
+ </div>
+ <div class="p-6">
+ <h3 class="text-lg font-display font-bold text-[#1a2e1a] mb-2">PP Daar Al Furqon 3</h3>
+ <p class="text-[#4a6b4a] text-sm mb-4">Putra — Program sekolah</p>
+ <div class="flex items-center justify-between pt-4 border-t border-[#1a2e1a]/5">
+ <a href="https://maps.app.goo.gl/okjrKqKk4fu46V4u5" target="_blank" rel="noopener" class="text-sm text-[#4a6b4a] hover:text-[#3a6b8c] transition flex items-center gap-2">
+ <i class="fas fa-map-marker-alt text-[#3a6b8c]/60"></i> Lokasi
+ </a>
+ <a href="brosur/pondok3.jpg" download class="text-[#1a4d2e] text-sm font-medium hover:text-[#2d6a3f] transition flex items-center gap-2">
+ Unduh <i class="fas fa-arrow-right text-xs"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="bento-item col-span-1 reveal stagger-4">
+ <div class="liquid-glass rounded-3xl overflow-hidden card-premium h-full group">
+ <div class="brosur-img-wrap relative overflow-hidden" style="height:192px;">
+ <div class="img-spinner"></div>
+ <img src="pondok4.jpeg" alt="Brosur Putri Sekolah" class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110 lazy-img" loading="lazy">
+ <div class="absolute inset-0 bg-gradient-to-t from-[#f0f5f2] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+ <div class="absolute top-4 left-4">
+ <span class="premium-tag bg-[#7a5c9c]/10 border border-[#7a5c9c]/20 text-[#9a7cbc] text-xs">Putri Sekolah</span>
+ </div>
+ </div>
+ <div class="p-6">
+ <h3 class="text-lg font-display font-bold text-[#1a2e1a] mb-2">PP Daar Al Furqon 4</h3>
+ <p class="text-[#4a6b4a] text-sm mb-4">Putri — Program sekolah</p>
+ <div class="flex items-center justify-between pt-4 border-t border-[#1a2e1a]/5">
+ <a href="https://maps.app.goo.gl/3Ra1A7xNbFj8sKC87" target="_blank" rel="noopener" class="text-sm text-[#4a6b4a] hover:text-[#7a5c9c] transition flex items-center gap-2">
+ <i class="fas fa-map-marker-alt text-[#7a5c9c]/60"></i> Lokasi
+ </a>
+ <a href="brosur/pondok4.png" download class="text-[#1a4d2e] text-sm font-medium hover:text-[#2d6a3f] transition flex items-center gap-2">
+ Unduh <i class="fas fa-arrow-right text-xs"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== TENTANG SECTION ===== -->
+<section id="tentang" class="relative z-10 py-16 md:py-24 lg:py-32">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12 md:mb-16 title-fade-left">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mb-4 md:mb-6 inline-flex">
+ <i class="fas fa-heart text-xs"></i>
+ <span>Tentang Kami</span>
+ </div>
+ <h2 class="kinetic-title text-3xl md:text-4xl lg:text-6xl text-[#1a2e1a] mb-4 md:mb-6">Tentang Kami</h2>
+ </div>
+
+ <div class="max-w-4xl mx-auto reveal">
+ <div class="text-center mb-10 md:mb-16">
+ <h3 class="text-2xl md:text-3xl font-display font-bold text-[#1a2e1a] mb-6 md:mb-8">Mencetak Generasi Qur'ani & Berprestasi</h3>
+ <p class="text-[#4a6b4a] text-base md:text-lg leading-relaxed mb-4 md:mb-6 px-4">Pondok Pesantren Daar Al Furqon Kudus didirikan pada tahun <span class="text-[#1a4d2e] font-semibold">1984</span> oleh <span class="text-[#1a4d2e] font-semibold">K.H.S. Abdul Qodir bin Umar Basyir</span> dengan komitmen untuk mencetak generasi yang hafal Al-Qur'an, menguasai ilmu syar'i, dan memiliki keterampilan modern.</p>
+ <p class="text-[#4a6b4a] text-base md:text-lg leading-relaxed mb-4 md:mb-6 px-4">Nama <span class="text-[#c8a45c] font-semibold">Daar Al-Furqon</span> yang berarti <em>"Rumah Al-Qur'an"</em> dimaksudkan agar pesantren ini dapat menjadi tempat mencetak kader-kader Islam yang Qur'ani.</p>
+ <p class="text-[#4a6b4a] text-base md:text-lg leading-relaxed px-4">Sejak tahun <span class="text-[#1a4d2e] font-semibold">2009</span>, kepemimpinan dilanjutkan oleh <span class="text-[#1a4d2e] font-semibold">K.H.S. Ahmad Abdul Basith</span>.</p>
+ </div>
+
+ <div class="text-center mb-8 md:mb-12">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] inline-flex mb-6 md:mb-8">
+ <i class="fas fa-star text-xs"></i>
+ <span>Program Unggulan</span>
+ </div>
+ </div>
+
+ <div class="grid md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-0 items-stretch">
+ <div class="liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium flex flex-col h-full">
+ <div class="flex-1">
+ <div class="float-left mr-4 mb-2">
+ <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl liquid-glass-primary flex items-center justify-center">
+ <i class="fas fa-quran text-[#1a4d2e] text-xl md:text-2xl"></i>
+ </div>
+ </div>
+ <h4 class="text-lg md:text-xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Tahfidz Al-Qur'an</h4>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Program hafalan 30 juz dengan metode tikrar dan muraja'ah intensif yang terstruktur.</p>
+ </div>
+ </div>
+ <div class="liquid-glass rounded-2xl md:rounded-3xl p-6 md:p-8 card-premium flex flex-col h-full">
+ <div class="flex-1">
+ <div class="float-left mr-4 mb-2">
+ <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#1a4d2e]/10 border border-[#1a4d2e]/20 flex items-center justify-center">
+ <i class="fas fa-graduation-cap text-[#1a4d2e] text-xl md:text-2xl"></i>
+ </div>
+ </div>
+ <h4 class="text-lg md:text-xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Madrasah Diniyah</h4>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed">Pendidikan ilmu syar'i dan kitab kuning dengan kurikulum yang komprehensif.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== KONTAK SECTION ===== -->
+<section id="kontak" class="relative z-10 py-16 md:py-24 lg:py-32">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12 md:mb-20 title-fade-left">
+ <div class="premium-tag liquid-glass-primary text-[#2d6a3f] mb-4 md:mb-6 inline-flex">
+ <i class="fas fa-paper-plane text-xs"></i>
+ <span>Hubungi Kami</span>
+ </div>
+ <h2 class="kinetic-title text-3xl md:text-4xl lg:text-6xl text-[#1a2e1a] mb-4 md:mb-6">Kontak & Media Sosial</h2>
+ <p class="text-[#4a6b4a] text-base md:text-lg max-w-2xl mx-auto px-4">Silakan hubungi kami untuk informasi lebih lanjut mengenai pendaftaran dan program</p>
+ </div>
+
+ <!-- Contact Cards -->
+ <div class="grid md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto mb-12 md:mb-20">
+ <!-- Putra -->
+ <div class="reveal liquid-glass-strong rounded-2xl md:rounded-3xl p-6 md:p-10 card-premium relative overflow-hidden">
+ <div class="absolute -top-20 -right-20 w-32 md:w-40 h-32 md:h-40 bg-[#3a6b8c]/5 rounded-full blur-3xl"></div>
+ <div class="relative z-10">
+ <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#3a6b8c]/10 border border-[#3a6b8c]/20 flex items-center justify-center mb-4 md:mb-6">
+ <i class="fas fa-male text-[#3a6b8c] text-xl md:text-2xl"></i>
+ </div>
+ <h3 class="text-xl md:text-2xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Kontak Putra</h3>
+ <p class="text-[#4a6b4a] text-sm mb-6 md:mb-8">Informasi pendaftaran untuk santri putra</p>
+ <div class="space-y-3 md:space-y-4">
+ <a href="https://wa.me/6282327019322" target="_blank" class="flex items-center gap-3 md:gap-4 liquid-glass rounded-2xl p-3 md:p-4 hover:bg-[#1a4d2e]/5 transition group cursor-pointer ripple">
+ <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1a4d2e]/20 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#1a4d2e] text-lg md:text-xl"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-sm md:text-base group-hover:text-[#1a4d2e] transition truncate">082327019322</p>
+ </div>
+ <i class="fas fa-arrow-right text-[#7a9a7a] group-hover:text-[#1a4d2e] group-hover:translate-x-1 transition-all text-sm"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+
+ <!-- Putri -->
+ <div class="reveal liquid-glass-strong rounded-2xl md:rounded-3xl p-6 md:p-10 card-premium relative overflow-hidden" style="transition-delay:0.15s">
+ <div class="absolute -top-20 -right-20 w-32 md:w-40 h-32 md:h-40 bg-[#c45c7a]/5 rounded-full blur-3xl"></div>
+ <div class="relative z-10">
+ <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#c45c7a]/10 border border-[#c45c7a]/20 flex items-center justify-center mb-4 md:mb-6">
+ <i class="fas fa-female text-[#c45c7a] text-xl md:text-2xl"></i>
+ </div>
+ <h3 class="text-xl md:text-2xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Kontak Putri</h3>
+ <p class="text-[#4a6b4a] text-sm mb-6 md:mb-8">Informasi pendaftaran untuk santri putri</p>
+ <div class="space-y-3 md:space-y-4">
+ <a href="" target="_blank" class="flex items-center gap-3 md:gap-4 liquid-glass rounded-2xl p-3 md:p-4 hover:bg-[#1a4d2e]/5 transition group cursor-pointer ripple">
+ <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1a4d2e]/20 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#1a4d2e] text-lg md:text-xl"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-sm md:text-base group-hover:text-[#1a4d2e] transition truncate">belum tersedia</p>
+ </div>
+ <i class="fas fa-arrow-right text-[#7a9a7a] group-hover:text-[#1a4d2e] group-hover:translate-x-1 transition-all text-sm"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Social Media -->
+ <div class="text-center reveal">
+ <h3 class="text-xl md:text-2xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Ikuti Kami</h3>
+ <p class="text-[#4a6b4a] text-sm md:text-base mb-6 md:mb-10">Dapatkan update terbaru seputar kegiatan pondok</p>
+ <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto px-4 md:px-0">
+ <a href="https://web.facebook.com/dafukudus/" target="_blank" class="liquid-glass rounded-2xl p-4 md:p-6 card-premium group text-center ripple">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#3a6b8c]/10 border border-[#3a6b8c]/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-500 group-hover:border-blue-500 transition-all">
+ <i class="fab fa-facebook-f text-[#3a6b8c] text-lg md:text-xl group-hover:text-[#1a2e1a] transition"></i>
+ </div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm mb-0.5">Facebook</h4>
+ <p class="text-[#6b8b6b] text-xs">@Daar Al Furqon</p>
+ </a>
+ <a href="https://www.instagram.com/ppdaarulfurqonkudus/" target="_blank" class="liquid-glass rounded-2xl p-4 md:p-6 card-premium group text-center ripple">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#c45c7a]/10 border border-[#c45c7a]/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-pink-500 group-hover:border-pink-500 transition-all">
+ <i class="fab fa-instagram text-[#c45c7a] text-lg md:text-xl group-hover:text-[#1a2e1a] transition"></i>
+ </div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm mb-0.5">Instagram</h4>
+ <p class="text-[#6b8b6b] text-xs break-words whitespace-normal">@ppdaarulfurqonkudus</p>
+ </a>
+ <a href="https://www.youtube.com/@ppdaarulfurqonkudus" target="_blank" class="liquid-glass rounded-2xl p-4 md:p-6 card-premium group text-center ripple">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#c45c5c]/10 border border-red-500/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-red-500 group-hover:border-red-500 transition-all">
+ <i class="fab fa-youtube text-[#c45c5c] text-lg md:text-xl group-hover:text-[#1a2e1a] transition"></i>
+ </div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm mb-0.5">YouTube</h4>
+ <p class="text-[#6b8b6b] text-xs break-words whitespace-normal">@ppdaarulfurqonkudus</p>
+ </a>
+ <a href="https://www.tiktok.com/@ppdaarulfurqonkudus" target="_blank" class="liquid-glass rounded-2xl p-4 md:p-6 card-premium group text-center ripple">
+ <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1a2e1a]/5 border border-[#1a2e1a]/10 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-white group-hover:border-white transition-all">
+ <i class="fab fa-tiktok text-[#3a5a3a] text-lg md:text-xl group-hover:text-black transition"></i>
+ </div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm mb-0.5">TikTok</h4>
+ <p class="text-[#6b8b6b] text-xs break-words whitespace-normal">@ppdaarulfurqonkudus</p>
+ </a>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="relative z-10 border-t border-[#1a2e1a]/5">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+ <div class="grid md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-12">
+ <div class="md:col-span-2">
+ <div class="flex items-center gap-3 mb-4 md:mb-6">
+ <div class="w-10 h-10 md:w-12 md:h-12 rounded-full liquid-glass-primary flex items-center justify-center">
+ <i class="fas fa-mosque text-[#1a4d2e] text-sm md:text-lg"></i>
+ </div>
+ <div>
+ <p class="text-[#6b8b6b] text-xs md:text-sm">Pondok Pesantren Qur'ani</p>
+ <h3 class="font-display font-bold text-[#1a2e1a] text-base md:text-lg">Daar Al Furqon Kudus</h3>
+ </div>
+ </div>
+ <p class="text-[#4a6b4a] text-sm leading-relaxed max-w-md">Mencetak generasi Qur'ani yang berakhlak mulia, berilmu luas, dan siap menjadi pemimpin masa depan bangsa.</p>
+ </div>
+ <div>
+ <h4 class="font-display font-bold text-[#1a2e1a] mb-4 md:mb-6 text-sm md:text-base">Tautan</h4>
+ <ul class="space-y-2 md:space-y-3 text-sm">
+ <li><a href="#beranda" class="text-[#4a6b4a] hover:text-[#1a4d2e] transition">Beranda</a></li>
+ <li><a href="#profil" class="text-[#4a6b4a] hover:text-[#1a4d2e] transition">Profil</a></li>
+ <li><a href="#visi-misi" class="text-[#4a6b4a] hover:text-[#1a4d2e] transition">Visi & Misi</a></li>
+ <li><a href="#brosur" class="text-[#4a6b4a] hover:text-[#1a4d2e] transition">Brosur PPDB</a></li>
+ <li><a href="#kontak" class="text-[#4a6b4a] hover:text-[#1a4d2e] transition">Kontak</a></li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-display font-bold text-[#1a2e1a] mb-4 md:mb-6 text-sm md:text-base">Sosial Media</h4>
+ <div class="flex gap-2 md:gap-3">
+ <a href="https://web.facebook.com/dafukudus/" class="w-9 h-9 md:w-10 md:h-10 rounded-full liquid-glass flex items-center justify-center text-[#4a6b4a] hover:text-[#1a2e1a] hover:bg-[#3a6b8c]/15 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+ <a href="https://www.instagram.com/ppdaarulfurqonkudus/" class="w-9 h-9 md:w-10 md:h-10 rounded-full liquid-glass flex items-center justify-center text-[#4a6b4a] hover:text-[#1a2e1a] hover:bg-[#c45c7a]/15 transition"><i class="fab fa-instagram text-sm"></i></a>
+ <a href="https://www.youtube.com/@ppdaarulfurqonkudus" class="w-9 h-9 md:w-10 md:h-10 rounded-full liquid-glass flex items-center justify-center text-[#4a6b4a] hover:text-[#1a2e1a] hover:bg-[#c45c5c]/15 transition"><i class="fab fa-youtube text-sm"></i></a>
+ <a href="https://www.tiktok.com/@ppdaarulfurqonkudus" class="w-9 h-9 md:w-10 md:h-10 rounded-full liquid-glass flex items-center justify-center text-[#4a6b4a] hover:text-[#1a2e1a] hover:bg-[#1a4d2e]/10 transition"><i class="fab fa-tiktok text-sm"></i></a>
+ </div>
+ </div>
+ </div>
+ <div class="pt-6 md:pt-8 border-t border-[#1a2e1a]/5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+    <p class="text-[#6b8b6b] text-xs md:text-sm text-center md:text-left"> © <span id="currentYear">2026</span> Pondok Pesantren Daar Al Furqon Kudus. Hak Cipta Dilindungi Undang-Undang.</p>
+    </div>
+ </div>
+</footer>
+
+<!-- ===== CONTACT MODAL ===== -->
+<div class="modal" id="contactModal">
+ <div class="liquid-glass-strong rounded-2xl md:rounded-3xl max-w-lg w-full mx-4 relative overflow-hidden max-h-[90vh] overflow-y-auto">
+ <div class="bg-gradient-to-br from-[#1a4d2e]/20 to-[#c8a45c]/20 p-6 md:p-8 text-center relative">
+ <button onclick="closeModal('contactModal')" class="absolute top-4 right-4 w-8 h-8 rounded-full liquid-glass flex items-center justify-center hover:bg-[#1a4d2e]/10 transition">
+ <i class="fas fa-times text-[#1a2e1a]/60"></i>
+ </button>
+ <i class="fas fa-headset text-3xl md:text-4xl text-[#1a4d2e] mb-3 md:mb-4"></i>
+ <h3 class="text-lg md:text-xl font-display font-bold text-[#1a2e1a] mb-1 md:mb-2">Hubungi Kami</h3>
+ <p class="text-[#4a6b4a] text-xs md:text-sm">Pilih kompleks pondok yang ingin Anda hubungi</p>
+ </div>
+ <div class="p-4 md:p-6 space-y-3 md:space-y-4">
+ <!-- Pondok 1 — Putra Pusat -->
+ <div class="liquid-glass rounded-2xl p-3 md:p-4">
+ <div class="flex items-center gap-3 mb-2 md:mb-3">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl liquid-glass-primary flex items-center justify-center shrink-0">
+ <i class="fas fa-mosque text-[#1a4d2e] text-xs md:text-sm"></i>
+ </div>
+ <div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm md:text-base">Pondok 1 — Putra Pusat</h4>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b]">Non-formal</p>
+ </div>
+ </div>
+ <div class="space-y-2">
+ <a href="https://wa.me/6282327019322" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#1a4d2e]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1a4d2e]/10 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#1a4d2e] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#1a4d2e] transition truncate">0823-2701-9322</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#1a4d2e] transition text-xs"></i>
+ </a>
+ <a href="https://maps.app.goo.gl/TJubb9QmfbG7ZxHS8" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#1a4d2e]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1a4d2e]/10 flex items-center justify-center shrink-0">
+ <i class="fas fa-map-marker-alt text-[#1a4d2e] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">Lokasi</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#1a4d2e] transition truncate">Kalugawen, Janggalan, Kudus</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#1a4d2e] transition text-xs"></i>
+ </a>
+ </div>
+ </div>
+
+ <!-- Pondok 2 — Putri -->
+ <div class="liquid-glass rounded-2xl p-3 md:p-4">
+ <div class="flex items-center gap-3 mb-2 md:mb-3">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#c45c7a]/10 border border-[#c45c7a]/20 flex items-center justify-center shrink-0">
+ <i class="fas fa-female text-[#c45c7a] text-xs md:text-sm"></i>
+ </div>
+ <div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm md:text-base">Pondok 2 — Putri</h4>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b]">Non-formal</p>
+ </div>
+ </div>
+ <div class="space-y-2">
+ <a href="" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#c45c7a]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#c45c7a]/10 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#c45c7a] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#c45c7a] transition truncate">belum tersedia</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#c45c7a] transition text-xs"></i>
+ </a>
+ <a href="https://maps.app.goo.gl/uymRJXHQ25tLrR4p7" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#c45c7a]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#c45c7a]/10 flex items-center justify-center shrink-0">
+ <i class="fas fa-map-marker-alt text-[#c45c7a] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">Lokasi</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#c45c7a] transition truncate">Kalugawen, Janggalan, Kudus</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#c45c7a] transition text-xs"></i>
+ </a>
+ </div>
+ </div>
+
+ <!-- Pondok 3 — Putra Sekolah -->
+ <div class="liquid-glass rounded-2xl p-3 md:p-4">
+ <div class="flex items-center gap-3 mb-2 md:mb-3">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#3a6b8c]/10 border border-[#3a6b8c]/20 flex items-center justify-center shrink-0">
+ <i class="fas fa-school text-[#3a6b8c] text-xs md:text-sm"></i>
+ </div>
+ <div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm md:text-base">Pondok 3 — Putra Sekolah</h4>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b]">Program sekolah</p>
+ </div>
+ </div>
+ <div class="space-y-2">
+ <a href="https://wa.me/6287798190835" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#3a6b8c]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#3a6b8c]/10 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#3a6b8c] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#3a6b8c] transition truncate">087798190835</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#3a6b8c] transition text-xs"></i>
+ </a>
+ <a href="https://maps.app.goo.gl/okjrKqKk4fu46V4u5" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#3a6b8c]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#3a6b8c]/10 flex items-center justify-center shrink-0">
+ <i class="fas fa-map-marker-alt text-[#3a6b8c] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">Lokasi</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#3a6b8c] transition truncate">Kalugawen, Janggalan, Kudus</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#3a6b8c] transition text-xs"></i>
+ </a>
+ </div>
+ </div>
+
+ <!-- Pondok 4 — Putri Sekolah -->
+ <div class="liquid-glass rounded-2xl p-3 md:p-4">
+ <div class="flex items-center gap-3 mb-2 md:mb-3">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#7a5c9c]/10 border border-[#7a5c9c]/20 flex items-center justify-center shrink-0">
+ <i class="fas fa-graduation-cap text-[#7a5c9c] text-xs md:text-sm"></i>
+ </div>
+ <div>
+ <h4 class="font-bold text-[#1a2e1a] text-sm md:text-base">Pondok 4 — Putri Sekolah</h4>
+ <p class="text-[10px] md:text-xs text-[#6b8b6b]">Program sekolah</p>
+ </div>
+ </div>
+ <div class="space-y-2">
+ <a href="" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#7a5c9c]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#7a5c9c]/10 flex items-center justify-center shrink-0">
+ <i class="fab fa-whatsapp text-[#7a5c9c] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">WhatsApp</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#7a5c9c] transition truncate">belum tersedia</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#7a5c9c] transition text-xs"></i>
+ </a>
+ <a href="https://maps.app.goo.gl/3Ra1A7xNbFj8sKC87" target="_blank" class="flex items-center gap-3 liquid-glass rounded-xl p-2.5 md:p-3 hover:bg-[#7a5c9c]/5 transition group">
+ <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#7a5c9c]/10 flex items-center justify-center shrink-0">
+ <i class="fas fa-map-marker-alt text-[#7a5c9c] text-sm md:text-base"></i>
+ </div>
+ <div class="flex-1 min-w-0">
+ <p class="text-[10px] md:text-xs text-[#6b8b6b] uppercase tracking-wider">Lokasi</p>
+ <p class="font-bold text-[#1a2e1a] text-xs md:text-sm group-hover:text-[#7a5c9c] transition truncate">Kalugawen, Janggalan, Kudus</p>
+ </div>
+ <i class="fas fa-chevron-right text-[#7a9a7a] group-hover:text-[#7a5c9c] transition text-xs"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast liquid-glass-strong text-[#1a2e1a] px-5 md:px-6 py-3 md:py-4 rounded-2xl shadow-xl flex items-center gap-3" id="toast">
+ <i class="fas fa-check-circle text-[#1a4d2e] text-lg md:text-xl"></i>
+ <div><h4 class="font-bold text-sm" id="toastTitle">Berhasil!</h4><p class="text-xs md:text-sm text-[#3a5a3a]" id="toastMessage">Operasi berhasil</p></div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top liquid-glass-primary" id="backToTop" onclick="scrollToTop()" aria-label="Kembali ke atas">
+ <i class="fas fa-arrow-up text-[#1a4d2e] text-sm md:text-base"></i>
+</button>
+
+<script src="app.js" defer></script>
+</body>
+</html>
